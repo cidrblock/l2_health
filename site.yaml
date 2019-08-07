@@ -1,0 +1,9 @@
+- hosts: all
+  gather_facts: false
+  collections:
+  - nmake.jetpack
+  roles:
+  - role: l2_health
+    health_checks:
+      nxos:
+      - spanning_tree_blockedports

@@ -1,0 +1,2 @@
+- include: "includes/{{ ansible_network_os }}/{{ item }}.yaml"
+  loop: "{{ collect[ansible_network_os] }}"
