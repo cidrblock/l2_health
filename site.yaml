@@ -4,13 +4,6 @@
   - nmake.jetpack
   tasks:
   - include_role:
-      name: collect
-    vars:
-      nxos_engine: xml
-      collect:
-        nxos:
-        - '!something'
-        eos:
-        - '!spanning_tree'
+      name: operating_state
   - debug:
       var: ansible_facts

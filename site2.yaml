@@ -1,0 +1,28 @@
+- hosts: all
+  gather_facts: false
+  collections:
+  - nmake.jetpack
+  tasks:
+  - include_role:
+      name: operating_state
+    vars:
+      nxos_engine: xml
+      fact_key: before
+      collect:
+        nxos:
+        - '!interfaces'
+        eos:
+        - '!spanning_tree'
+  - include_role:
+      name: operating_state
+    vars:
+      nxos_engine: xml
+      fact_key: after
+      collect:
+        nxos:
+        - '!interfaces'
+        eos:
+        - '!spanning_tree'
+  - fact_diff:
+      before: "{{ before|default({})|nmake.jetpack.to_dotted }}"
+      after: "{{ after|default({})|nmake.jetpack.to_dotted }}"

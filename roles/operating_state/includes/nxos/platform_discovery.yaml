@@ -7,4 +7,4 @@
 - set_fact:
     engine: "{% if nxos_engine is defined %}{{ nxos_engine }}
              {%- elif ansible_net_version.split('.')[0]|int > 7 %}json
-             {% else %}xml{% endif %}"
+             {%- else %}xml{% endif %}"

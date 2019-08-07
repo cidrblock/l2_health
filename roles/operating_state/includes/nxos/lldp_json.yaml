@@ -22,6 +22,7 @@
         transform:
         - name: "nxos_flatten_table_row"
         - name: replace_keys
+          keys:
           - before: '^lldp_all$'
             after: all
         - name: "set_root_key"

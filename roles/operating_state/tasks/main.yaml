@@ -6,7 +6,7 @@
 - name: Merge the user provided with role defaults
   set_fact:
     really_collect: "{{ (role_defaults['collect']|
-                         nmake.jetpack.dict_merge_bang(collect))
+                         nmake.jetpack.dict_merge_bang(collect|default({})))
                          [ansible_network_os] }}"
 
 
