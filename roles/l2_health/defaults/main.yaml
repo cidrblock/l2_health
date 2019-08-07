@@ -1,3 +1,5 @@
+fact_key: l2_health
+
 collect:
   ios: []
   eos: []

@@ -8,8 +8,11 @@
         - name: "nxos_flatten_table_row"
         - name: set_root_key
           key: spanning_tree_blockedports
+        - name: set_root_key
+          key: "{{ fact_key }}"
 
 - name: "nxos.spanning_tree: assert spanning-tree blockedports"
   assert:
-    that: spanning_tree_blockedports == check_vals[ansible_network_os]['spanning_tree_blockedports_ok']
+    that: ansible_facts[fact_key]['spanning_tree_blockedports'] ==
+          check_vals[ansible_network_os]['spanning_tree_blockedports_ok']
   when: "'spanning_tree_blockedports' in health_checks[ansible_network_os]"
