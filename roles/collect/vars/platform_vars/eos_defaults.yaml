@@ -1,6 +1,6 @@
 eos_defaults:
   collect:
-  - arp_table
+  - arp
   - cdp
   - lldp
   - interfaces

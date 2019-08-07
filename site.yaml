@@ -6,10 +6,10 @@
   - include_role:
       name: collect
     vars:
-      nxos_engine: json   # this is the default btw
+      nxos_engine: xml
       collect:
         nxos:
-        - '!interfaces'
+        - '!something'
         eos:
         - '!spanning_tree'
   - debug:
