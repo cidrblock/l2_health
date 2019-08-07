@@ -5,3 +5,9 @@
   tasks:
   - include_role:
       name: l2_health
+    vars:
+      collect:
+        nxos:
+        - '!arp_table'
+        eos:
+        - '!spanning_tree'

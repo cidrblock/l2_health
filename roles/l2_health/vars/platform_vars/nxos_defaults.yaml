@@ -1,9 +1,8 @@
 nxos_defaults:
-  some:
-    deeply:
-      nested:
-        stuff:
-          here:
-          - 1
-          - 2
-          - 3
+  collect:
+  - arp_table
+  - cdp
+  - lldp
+  - interfaces
+  - system
+  - spanning_tree

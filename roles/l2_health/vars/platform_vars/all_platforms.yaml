@@ -1,3 +1,7 @@
 role_defaults:
-  nxos: "{{ nxos_defaults }}"
-  eos: "{{ eos_defaults }}"
+  collect:
+    nxos: "{{ nxos_defaults['collect'] }}"
+    eos: "{{ eos_defaults['collect'] }}"
+    ios: "{{ ios_defaults['collect'] }}"
+    vyos: []
+    junos: []

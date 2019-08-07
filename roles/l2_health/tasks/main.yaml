@@ -1,9 +1,14 @@
-# - include: "includes/{{ ansible_network_os }}/{{ item }}.yaml"
-#   loop: "{{ collect[ansible_network_os] }}"
 
-- name: get everything in the defaults directory
+- name: Get everything in the defaults directory
   include_vars:
     dir: platform_vars
 
-- debug:
-    var: role_defaults
+- name: Merge the user provided with role defaults
+  set_fact:
+    really_collect: "{{ (role_defaults['collect']|
+                         nmake.jetpack.dict_merge_bang(collect))
+                         [ansible_network_os] }}"
+
+- name: These are the thing we really want to collect
+  debug:
+    msg: "For {{ ansible_network_os }} we collect {{ really_collect }}"

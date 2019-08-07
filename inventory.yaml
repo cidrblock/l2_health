@@ -8,9 +8,11 @@ all:
     ansible_connection: network_cli
 
   hosts:
-    ios101:
+    ios102:
       ansible_network_os: ios
     nxos101:
       ansible_network_os: nxos
     eos101:
       ansible_network_os: eos
+    vyos101:
+      ansible_network_os: vyos
