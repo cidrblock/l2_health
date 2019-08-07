@@ -9,5 +9,11 @@
                          nmake.jetpack.dict_merge_bang(collect))
                          [ansible_network_os] }}"
 
-- include: "includes/{{ ansible_network_os }}/{{ item }}.yaml"
-  with_items: "{{ really_collect }}"
+
+- include: "{{ item }}"
+  with_first_found:
+  - "includes/{{ ansible_network_os }}/platform_discovery.yaml"
+  - "includes/unsupported_platform.yaml"
+
+- include: "includes/{{ ansible_network_os }}/{{ item }}_{{ engine }}.yaml"
+  loop: "{{ really_collect }}"

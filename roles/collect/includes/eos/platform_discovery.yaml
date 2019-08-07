@@ -1,0 +1,2 @@
+- set_fact:
+    engine: "{{ eos_engine|default('json') }}"

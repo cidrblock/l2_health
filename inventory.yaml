@@ -6,6 +6,7 @@ all:
     ansible_become: True
     ansible_become_method: enable
     ansible_connection: network_cli
+    ansible_python_interpreter: python
 
   hosts:
     ios102:
