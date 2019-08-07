@@ -4,7 +4,7 @@
   - nmake.jetpack
   tasks:
   - include_role:
-      name: l2_health
+      name: collect
     vars:
       collect:
         nxos:
