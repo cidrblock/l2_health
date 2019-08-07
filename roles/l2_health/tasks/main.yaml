@@ -9,6 +9,5 @@
                          nmake.jetpack.dict_merge_bang(collect))
                          [ansible_network_os] }}"
 
-- name: These are the thing we really want to collect
-  debug:
-    msg: "For {{ ansible_network_os }} we collect {{ really_collect }}"
+- include: "includes/{{ ansible_network_os }}/{{ item }}.yaml"
+  with_items: "{{ really_collect }}"

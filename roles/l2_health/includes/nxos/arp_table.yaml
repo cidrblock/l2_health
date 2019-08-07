@@ -1,12 +1,12 @@
-- name: "nxos.spanning_tree: show spanning-tree blockedports"
+- name: "nxos.arp_table: show ip arp vrf all"
   nmake.jetpack.cli_parse_transform:
     engine: "native_json"
     commands:
-      - command: "show spanning-tree blockedports"
+      - command: "show ip arp vrf all"
         set_fact: True
         transform:
         - name: "nxos_flatten_table_row"
         - name: set_root_key
-          key: spanning_tree_blockedports
+          key: ip_arp_vrf_all
         - name: set_root_key
           key: "{{ fact_key }}"

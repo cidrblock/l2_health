@@ -1,17 +1,1 @@
 fact_key: l2_health
-
-collect:
-  ios: []
-  eos: []
-  junos: []
-  nxos:
-  - spanning_tree
-  vyos: []
-
-
-check_vals:
-  nxos:
-    spanning_tree_blockedports_ok: ''
-
-health_checks:
-  nxos: []

@@ -8,6 +8,8 @@
     vars:
       collect:
         nxos:
-        - '!arp_table'
+        - '!interfaces'
         eos:
         - '!spanning_tree'
+  - debug:
+      var: ansible_facts
