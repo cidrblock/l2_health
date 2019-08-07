@@ -1,2 +1,9 @@
-- include: "includes/{{ ansible_network_os }}/{{ item }}.yaml"
-  loop: "{{ collect[ansible_network_os] }}"
+# - include: "includes/{{ ansible_network_os }}/{{ item }}.yaml"
+#   loop: "{{ collect[ansible_network_os] }}"
+
+- name: get everything in the defaults directory
+  include_vars:
+    dir: platform_vars
+
+- debug:
+    var: role_defaults

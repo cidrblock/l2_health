@@ -1,0 +1,9 @@
+nxos_defaults:
+  some:
+    deeply:
+      nested:
+        stuff:
+          here:
+          - 1
+          - 2
+          - 3

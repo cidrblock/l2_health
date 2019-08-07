@@ -3,28 +3,5 @@
   collections:
   - nmake.jetpack
   tasks:
-  - name: Run the l2 health collection before changes
-    include_role:
+  - include_role:
       name: l2_health
-    vars:
-      fact_key: before
-      health_checks:
-        nxos:
-        - spanning_tree_blockedports
-
-  - debug:
-      msg: "I'm making changes on a friday"
-
-  - name: Run the l2 health collection before changes
-    include_role:
-      name: l2_health
-    vars:
-      fact_key: after
-      health_checks:
-        nxos:
-        - spanning_tree_blockedports
-
-  - name: Compare the before and after
-    fact_diff:
-      before: "{{ before|default() }}"
-      after: "{{ after|default() }}"
